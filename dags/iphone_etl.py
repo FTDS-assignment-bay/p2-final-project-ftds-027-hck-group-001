@@ -15,7 +15,7 @@ default_args= {
 with DAG(
     'Final_Project',
     description='from postgres to clean data',
-    schedule_interval='10-30/10 9 * * 6',
+    schedule_interval='@monthly',
     default_args=default_args, 
     catchup=False) as dag:
 
