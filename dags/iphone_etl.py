@@ -83,6 +83,7 @@ with DAG(
         df['product_variant'] = clean_texts     
 
         df['product_type'] = df['product_variant'].str.slice(0,16)
+        df['product_type'] = df['product_type'].str.strip()
 
         df['date'] = pd.to_datetime(df['date'], dayfirst=True, errors='coerce').dt.date
         
