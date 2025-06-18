@@ -24,8 +24,7 @@ with DAG(
 
     @task()
     def preprocess_data():
-        # Method ini digunakan untuk cleaning data mentah yang diambil dari table_m3
-
+        # This method is use for data cleaning from raw_data_iphone table
         df = pd.read_csv('/opt/airflow/data/iphone_extract.csv')
         
         # Remove missing value if any
@@ -34,8 +33,8 @@ with DAG(
         # Remove duplicates if any
         df = df.drop_duplicates()
         
-        # column productVariant
-        # list jenis warna, size storage, nama provider, dan id untuk iphone 13, 14, 15
+        # column product_variant
+        # list type of color, size storage, provider name, and id for iphone 13, 14, 15
         colors_list = ['blue', 'starlight', 'purple', 'midnight', 'red', 'yellow', 'pink', 'green','black']
         size_list = [128, 256, 512]
         provider_list = ['Verizon', 'Unlocked', 'AT&T', 'T-Mobile', 'GSM Carriers']
@@ -51,7 +50,7 @@ with DAG(
             provider = None
             model = None
 
-            # pengecekan jenis Iphone 13, 14 atau 15 bedasarkan id di productAsin
+            # Check the type of Iphone based on the id di product_asin column
             if asin in iphone_13:
                 model = '13'
             elif asin in iphone_14:
@@ -60,17 +59,17 @@ with DAG(
                 model = '15'
             else:
                 model = 'Unknown'
-            # pengecekan jenis warna Iphone
+            # Check the color of Iphone
             for c in colors_list:
                 if c in variant_lower:
                     colour = c.capitalize()
                     break
-            # pengecekan size storage Iphone
+            # Check the storage size of Iphone
             for s in size_list:
                 if str(s) in variant_lower:
                     size = s
                     break
-            # pengecekan jenis provider Iphone
+            # Check the name of the Iphone provider
             for p in provider_list:
                 if p.lower() in variant_lower:
                     provider = p
@@ -95,7 +94,7 @@ with DAG(
 
     @task()
     def fetch_from_postgre():
-        # Method ini digunakan untuk mengambil data dari database dan membuat csv baru.
+        # This method is use for getting the raw data from the database and converting it into a csv
         database = "final_project"
         username = "airflow"
         password = "airflow"
@@ -105,13 +104,14 @@ with DAG(
 
         engine = create_engine(postgres_url)
         conn = engine.connect()
-        # ganti isi table_m3 dengan data dari kaggle 
+        
         df = pd.read_sql('select * from raw_data_iphone',conn)
         df.to_csv('/opt/airflow/data/iphone_extract.csv',index=False)
         print("Success FETCH")
 
     @task()
     def load_to_postgre():
+        # This method is use to create a new table in the database and insert the now clean data.
         pgConn = pg.connect(
         dbname="final_project",
         user="airflow",
