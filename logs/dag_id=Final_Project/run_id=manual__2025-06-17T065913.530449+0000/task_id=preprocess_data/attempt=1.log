@@ -1,0 +1,32 @@
+[2025-06-17T06:59:21.197+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.preprocess_data manual__2025-06-17T06:59:13.530449+00:00 [queued]>
+[2025-06-17T06:59:21.213+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.preprocess_data manual__2025-06-17T06:59:13.530449+00:00 [queued]>
+[2025-06-17T06:59:21.214+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T06:59:21.215+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2025-06-17T06:59:21.216+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T06:59:21.247+0000] {taskinstance.py:1389} INFO - Executing <Task(_PythonDecoratedOperator): preprocess_data> on 2025-06-17 06:59:13.530449+00:00
+[2025-06-17T06:59:21.261+0000] {standard_task_runner.py:52} INFO - Started process 1185 to run task
+[2025-06-17T06:59:21.266+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Final_Project', 'preprocess_data', 'manual__2025-06-17T06:59:13.530449+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/iphone_etl.py', '--cfg-path', '/tmp/tmp11yw838d', '--error-file', '/tmp/tmpvdrnil_k']
+[2025-06-17T06:59:21.268+0000] {standard_task_runner.py:80} INFO - Job 17: Subtask preprocess_data
+[2025-06-17T06:59:21.823+0000] {task_command.py:371} INFO - Running <TaskInstance: Final_Project.preprocess_data manual__2025-06-17T06:59:13.530449+00:00 [running]> on host 240725df7103
+[2025-06-17T06:59:22.328+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Dwi
+AIRFLOW_CTX_DAG_ID=Final_Project
+AIRFLOW_CTX_TASK_ID=preprocess_data
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T06:59:13.530449+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T06:59:13.530449+00:00
+[2025-06-17T06:59:22.433+0000] {logging_mixin.py:115} INFO - Preprocessed data is Success
+[2025-06-17T06:59:22.455+0000] {logging_mixin.py:115} INFO -   product_asin country  ...                       product_variant      product_type
+0   B0BDK8LKPJ   India  ...     Apple Iphone 14 (256 GB) - Purple  Apple Iphone 14 
+1   B0BDK8LKPJ   India  ...       Apple Iphone 14 (128 GB) - Blue  Apple Iphone 14 
+2   B09G9D8KRQ   India  ...   Apple Iphone 13 (256 GB) - Midnight  Apple Iphone 13 
+3   B09G9D8KRQ   India  ...  Apple Iphone 13 (256 GB) - Starlight  Apple Iphone 13 
+4   B09G9BL5CP   India  ...   Apple Iphone 13 (256 GB) - Midnight  Apple Iphone 13 
+
+[5 rows x 14 columns]
+[2025-06-17T06:59:22.604+0000] {python.py:173} INFO - Done. Returned value was: None
+[2025-06-17T06:59:22.756+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=Final_Project, task_id=preprocess_data, execution_date=20250617T065913, start_date=20250617T065921, end_date=20250617T065922
+[2025-06-17T06:59:22.845+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2025-06-17T06:59:23.124+0000] {local_task_job.py:279} INFO - 1 downstream tasks scheduled from follow-on schedule check

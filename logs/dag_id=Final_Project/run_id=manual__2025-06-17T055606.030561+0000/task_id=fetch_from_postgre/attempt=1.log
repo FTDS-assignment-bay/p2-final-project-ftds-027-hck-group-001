@@ -1,0 +1,24 @@
+[2025-06-17T05:56:09.425+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.fetch_from_postgre manual__2025-06-17T05:56:06.030561+00:00 [queued]>
+[2025-06-17T05:56:09.440+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.fetch_from_postgre manual__2025-06-17T05:56:06.030561+00:00 [queued]>
+[2025-06-17T05:56:09.441+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T05:56:09.442+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2025-06-17T05:56:09.443+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T05:56:09.466+0000] {taskinstance.py:1389} INFO - Executing <Task(_PythonDecoratedOperator): fetch_from_postgre> on 2025-06-17 05:56:06.030561+00:00
+[2025-06-17T05:56:09.484+0000] {standard_task_runner.py:52} INFO - Started process 427 to run task
+[2025-06-17T05:56:09.489+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Final_Project', 'fetch_from_postgre', 'manual__2025-06-17T05:56:06.030561+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/iphone_etl.py', '--cfg-path', '/tmp/tmpc0gp7i_d', '--error-file', '/tmp/tmptebft9cg']
+[2025-06-17T05:56:09.492+0000] {standard_task_runner.py:80} INFO - Job 4: Subtask fetch_from_postgre
+[2025-06-17T05:56:10.232+0000] {task_command.py:371} INFO - Running <TaskInstance: Final_Project.fetch_from_postgre manual__2025-06-17T05:56:06.030561+00:00 [running]> on host 240725df7103
+[2025-06-17T05:56:10.804+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Dwi
+AIRFLOW_CTX_DAG_ID=Final_Project
+AIRFLOW_CTX_TASK_ID=fetch_from_postgre
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T05:56:06.030561+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T05:56:06.030561+00:00
+[2025-06-17T05:56:11.262+0000] {logging_mixin.py:115} INFO - Success FETCH
+[2025-06-17T05:56:11.267+0000] {python.py:173} INFO - Done. Returned value was: None
+[2025-06-17T05:56:11.517+0000] {taskinstance.py:1412} INFO - Marking task as SUCCESS. dag_id=Final_Project, task_id=fetch_from_postgre, execution_date=20250617T055606, start_date=20250617T055609, end_date=20250617T055611
+[2025-06-17T05:56:11.564+0000] {local_task_job.py:156} INFO - Task exited with return code 0
+[2025-06-17T05:56:11.905+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
