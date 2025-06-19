@@ -1,7 +1,7 @@
 <div align="center">
   <p>
     <a align="center">
-      <img width="550" src="https://github.com/FTDS-assignment-bay/p2-final-project-ftds-hck-026/blob/dev-tina/LOGO%20AISEE%20YOU.png"></a>
+      <img width="550" src="https://github.com/FTDS-assignment-bay/p2-final-project-ftds-027-hck-group-001/blob/main/aerecommend.png"></a>
   </p>
 </div>
 
@@ -15,38 +15,25 @@ Berdasarkan dominasi global iPhone—terutama seri iPhone 13 dan 14 pada tahun 2
 Project ini bertujuan untuk membuat sistem rekomendasi bagi calon pembeli iPhone untuk menentukan tipe iPhone series mana yang sesuai dengan kebutuhan sesuai preferensi masing-masing. Model Deep Learning yang digunakan adalah BERT dari Google. Prosesnya mencakup eksplorasi data, analisis visual, pelatihan model, evaluasi dengan metrik **f1-score**.
 
 ## Demo
-### YOLOv8 Model
-1. To get started, visit the provided [link](https://deployment-5rznu7uyrh43hms2ce7vh5.streamlit.app/) to access the application.
-2. Once you have logged into the application, you will see several page options to explore. To find out when dangerous objects are most likely to be detected, please select the 'X-ray Detection Prediction' page.
-
-### Faster R-CNN w/ResNet50
-Download the trained model from this [Google Drive link](https://drive.google.com/file/d/1T4EIeSrLjLdQ3Bk2YBNywTcSX5QoTBlL/view?usp=sharing), extract the content and put it in the root folder of the repository.
-Alternatively, you can train and build your own model. Follow the guide at [TensorFlow README.md](TensorFlow%20README.md) to train and run your own model.
+### LSTM With Google BERT Preprocessing and Encoder Layer
+Model bisa di train setelah mengekstrak file rar bernama best_model. Ekstrak file tersebut dan jalankan file juypyter notebook bernama best_model.ipynb, dan pastikan file model di folder yang sama dengan file notebook.
 
 ## Conclusion
-The model is able to detect dangerous objects from X-ray images effectively.
-Based on evaluations using Ultralytics, the model achieved a performance of over 80% mAP@0.5.
-This result provides a strong foundation for further development, both in improving accuracy and expanding the scope of hazardous object detection.
+- User yang membeli iPhone rata-rata senang dengan kualitas fitur kamera dan display. 
+- User yang memberikan review fitur baterai beragam antara positif dan negatif.
+- Model yang dibuat cukup baik dalam memprediksi pembeli yang cocok dengan iPhone 13 dan tidak buruk pada user yang diprediksi cocok dengan iPhone 14. Pada user yang diprediksi cocok dengan iPhone 15, nilai f1 score yang rendah disebabkan oleh data yang tidak seimbang, sehingga model sangat buruk dalam prediksi.
 
 ## Further Recommendations
-1. **Increasing the Number of Data Samples:** 
-Adding more data helps the model learn from a wider variety of examples, which improves its ability to detect dangerous objects in real-world scenarios. A larger dataset reduces the risk of overfitting and enhances generalization.
-
-2. **Data Augmentation:** Data augmentation involves applying transformations—such as rotation, scaling, flipping, or adding noise—to existing images. This technique increases the diversity of the training data without the need to collect new samples, making the model more robust to different angles, sizes, and distortions.
-
-3. **Fine-Tuning:** Fine-tuning is the process of taking a pre-trained model and adapting it to a specific dataset. This allows the model to leverage previously learned features while focusing on the unique characteristics of X-ray images, leading to higher detection accuracy.
-
-4. **Trying Different Model Architectures:** Exploring alternative model architectures (e.g., YOLOv8, EfficientDet, or Faster R-CNN) can help identify one that better balances speed, accuracy, and resource efficiency for X-ray object detection tasks. Each architecture has strengths that may suit specific use cases.
+- Memperbanyak jumlah data.
+- Menggunakan model yang lebih efisien.
+- Dapat merekomendasikan bukan hanya tipe tetapi dengan varian juga.
 
 ## Meet our team
-* Zaky Rizky Akbar | [LinkedIn](https://www.linkedin.com/in/zaky-rizky-akbar-894332171/) | [Github](https://github.com/zakyrizky05) 
-* Maulana Yusuf Taufiqurrahman| [LinkedIn](https://www.linkedin.com/in/maulana-yusuf-taufiqurrahman-5281662a2) | [Github](https://github.com/Maulana-Yusuf-T)
-* Angga Fadhlurrahman Prianto | [LinkedIn](www.linkedin.com/in/angga-fadhlurrahman-prianto-29501b194) | [Github](https://github.com/angga7353)
-* Muhammad Irfan Hilmi| [LinkedIn](https://www.linkedin.com/in/muhammad-irfan-hilmi-90a282241/) | [Github]( https://github.com/Hennoshin)
-* Suartina Sitanggang | [LinkedIn](https://www.linkedin.com/in/suartinasitanggang/) | [Github](https://github.com/tinaSTG)
+* Bagus Rifky Riyanto | [LinkedIn](www.linkedin.com/in/bagusrifkyriyanto)
+* Dwi Adhi Widigda Kartomihardjo | [LinkedIn](https://www.linkedin.com/in/dwi-adhi-widigda-k-641a62208/)
+* Farras Annisa | [LinkedIn](https://www.linkedin.com/in/farras-annisa/)
+* Iriel Aureleo | [LinkedIn](https://www.linkedin.com/in/irielaureleo/)
 
-
-## References
-https://github.com/ultralytics/yolov5/<br>
-https://www.kaggle.com/datasets/orvile/x-ray-baggage-anomaly-detection/data <br>
-https://www.tensorflow.org/api_docs/python/tf#tensorflow
+## URL
+- Dataset URL: https://www.kaggle.com/datasets/mrmars1010/iphone-customer-reviews-nlp <br>
+- Deployment URL: https://huggingface.co/spaces/DwiA2/Final_Project_Reco-ae
