@@ -1,0 +1,35 @@
+[2025-06-17T06:51:41.366+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.load_to_postgre manual__2025-06-17T06:51:29.720223+00:00 [queued]>
+[2025-06-17T06:51:41.381+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.load_to_postgre manual__2025-06-17T06:51:29.720223+00:00 [queued]>
+[2025-06-17T06:51:41.382+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T06:51:41.383+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2025-06-17T06:51:41.384+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T06:51:41.407+0000] {taskinstance.py:1389} INFO - Executing <Task(_PythonDecoratedOperator): load_to_postgre> on 2025-06-17 06:51:29.720223+00:00
+[2025-06-17T06:51:41.420+0000] {standard_task_runner.py:52} INFO - Started process 1077 to run task
+[2025-06-17T06:51:41.426+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Final_Project', 'load_to_postgre', 'manual__2025-06-17T06:51:29.720223+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/iphone_etl.py', '--cfg-path', '/tmp/tmpxw4a_i80', '--error-file', '/tmp/tmph4dq72ic']
+[2025-06-17T06:51:41.428+0000] {standard_task_runner.py:80} INFO - Job 15: Subtask load_to_postgre
+[2025-06-17T06:51:42.078+0000] {task_command.py:371} INFO - Running <TaskInstance: Final_Project.load_to_postgre manual__2025-06-17T06:51:29.720223+00:00 [running]> on host 240725df7103
+[2025-06-17T06:51:42.636+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Dwi
+AIRFLOW_CTX_DAG_ID=Final_Project
+AIRFLOW_CTX_TASK_ID=load_to_postgre
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T06:51:29.720223+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T06:51:29.720223+00:00
+[2025-06-17T06:51:43.046+0000] {logging_mixin.py:115} WARNING - /opt/***/dags/iphone_etl.py:155 FutureWarning: Using short name for 'orient' is deprecated. Only the options: ('dict', list, 'series', 'split', 'records', 'index') will be used in a future version. Use one of the above to silence this warning.
+[2025-06-17T06:51:43.084+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 179, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/iphone_etl.py", line 179, in load_to_postgre
+    row['product_type']
+TypeError: 'str' object is not callable
+[2025-06-17T06:51:43.228+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Final_Project, task_id=load_to_postgre, execution_date=20250617T065129, start_date=20250617T065141, end_date=20250617T065143
+[2025-06-17T06:51:43.259+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 15 for task load_to_postgre ('str' object is not callable; 1077)
+[2025-06-17T06:51:43.286+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2025-06-17T06:51:43.572+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check

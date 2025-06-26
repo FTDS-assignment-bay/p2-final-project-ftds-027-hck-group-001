@@ -1,0 +1,49 @@
+[2025-06-17T05:52:31.615+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.preprocess_data manual__2025-06-17T05:52:20.424876+00:00 [queued]>
+[2025-06-17T05:52:31.631+0000] {taskinstance.py:1171} INFO - Dependencies all met for <TaskInstance: Final_Project.preprocess_data manual__2025-06-17T05:52:20.424876+00:00 [queued]>
+[2025-06-17T05:52:31.632+0000] {taskinstance.py:1368} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T05:52:31.633+0000] {taskinstance.py:1369} INFO - Starting attempt 1 of 1
+[2025-06-17T05:52:31.634+0000] {taskinstance.py:1370} INFO - 
+--------------------------------------------------------------------------------
+[2025-06-17T05:52:31.662+0000] {taskinstance.py:1389} INFO - Executing <Task(_PythonDecoratedOperator): preprocess_data> on 2025-06-17 05:52:20.424876+00:00
+[2025-06-17T05:52:31.673+0000] {standard_task_runner.py:52} INFO - Started process 376 to run task
+[2025-06-17T05:52:31.678+0000] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Final_Project', 'preprocess_data', 'manual__2025-06-17T05:52:20.424876+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/iphone_etl.py', '--cfg-path', '/tmp/tmp4c0lf2pl', '--error-file', '/tmp/tmp9biswwr1']
+[2025-06-17T05:52:31.680+0000] {standard_task_runner.py:80} INFO - Job 3: Subtask preprocess_data
+[2025-06-17T05:52:32.227+0000] {task_command.py:371} INFO - Running <TaskInstance: Final_Project.preprocess_data manual__2025-06-17T05:52:20.424876+00:00 [running]> on host 240725df7103
+[2025-06-17T05:52:32.691+0000] {taskinstance.py:1583} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Dwi
+AIRFLOW_CTX_DAG_ID=Final_Project
+AIRFLOW_CTX_TASK_ID=preprocess_data
+AIRFLOW_CTX_EXECUTION_DATE=2025-06-17T05:52:20.424876+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-06-17T05:52:20.424876+00:00
+[2025-06-17T05:52:32.831+0000] {taskinstance.py:1902} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'productAsin'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 179, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/iphone_etl.py", line 56, in preprocess_data
+    for variant, asin in zip(df['variant'], df['productAsin']):
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/frame.py", line 3458, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc
+    raise KeyError(key) from err
+KeyError: 'productAsin'
+[2025-06-17T05:52:33.144+0000] {taskinstance.py:1412} INFO - Marking task as FAILED. dag_id=Final_Project, task_id=preprocess_data, execution_date=20250617T055220, start_date=20250617T055231, end_date=20250617T055233
+[2025-06-17T05:52:33.243+0000] {standard_task_runner.py:97} ERROR - Failed to execute job 3 for task preprocess_data ('productAsin'; 376)
+[2025-06-17T05:52:33.296+0000] {local_task_job.py:156} INFO - Task exited with return code 1
+[2025-06-17T05:52:33.611+0000] {local_task_job.py:279} INFO - 0 downstream tasks scheduled from follow-on schedule check
